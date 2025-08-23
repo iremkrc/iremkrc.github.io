@@ -9,19 +9,19 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-bookshelf",
-          title: "bookshelf",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/books/";
-          },
-        },{id: "nav-travel",
+  },{id: "nav-travel",
           title: "travel",
-          description: "",
+          description: "A collection of my travel adventures and experiences around the world.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/travel/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "A growing collection of your cool projects.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
           },
         },{id: "nav-blog",
           title: "blog",
@@ -30,12 +30,12 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "nav-projects",
-          title: "projects",
-          description: "A growing collection of your cool projects.",
+        },{id: "nav-bookshelf",
+          title: "bookshelf",
+          description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/projects/";
+            window.location.href = "/books/";
           },
         },{id: "nav-cv",
           title: "cv",
@@ -468,6 +468,36 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "travel-christmas-markets-in-germany",
+          title: 'Christmas Markets in Germany',
+          description: "",
+          section: "Travel",handler: () => {
+              window.location.href = "/travel/christmas_markets/";
+            },},{id: "travel-rotterdam-netherlands",
+          title: 'Rotterdam, Netherlands',
+          description: "",
+          section: "Travel",handler: () => {
+              window.location.href = "/travel/rotterdam/";
+            },},{id: "travel-strasbourg-france",
+          title: 'Strasbourg, France',
+          description: "",
+          section: "Travel",handler: () => {
+              window.location.href = "/travel/strasbourg/";
+            },},{id: "travel-fethiye-türkiye",
+          title: 'Fethiye, Türkiye',
+          description: "Where East meets West - exploring the rich history, stunning architecture, and vibrant culture of this ancient city.",
+          section: "Travel",handler: () => {
+              window.location.href = "/travel/fethiye/";
+            },},{id: "travel-antalya-türkiye",
+          title: 'Antalya, Türkiye',
+          description: "Where East meets West - exploring the rich history, stunning architecture, and vibrant culture of this ancient city.",
+          section: "Travel",handler: () => {
+              window.location.href = "/travel/olympos/";
+            },},{id: "travel-paris-france",
+          title: 'Paris, France',
+          description: "The City of Light - exploring the iconic landmarks, art museums, and charming streets of Paris.",
+          section: "Travel",handler: () => {
+              window.location.href = "/travel/paris/";
             },},{
         id: 'social-email',
         title: 'email',
