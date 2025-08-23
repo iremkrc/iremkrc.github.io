@@ -1,0 +1,45 @@
+<div class="col">
+  <a href="{% if travel.redirect %}{{ travel.redirect }}{% else %}{{ travel.url | relative_url }}{% endif %}">
+    <div class="card h-100 hoverable">
+      {% if travel.img %}
+        {%
+          include figure.liquid
+          loading="eager"
+          path=travel.img
+          sizes = "250px"
+          alt="travel destination thumbnail"
+          class="card-img-top"
+        %}
+      {% endif %}
+      <div class="card-body">
+        <h2 class="card-title">{{ travel.title }}</h2>
+        <p class="card-text">{{ travel.description }}</p>
+        <div class="row ml-1 mr-1 p-0">
+          {% if travel.location %}
+            <div class="location-info">
+              <div class="icon" data-toggle="tooltip" title="Location">
+                <i class="fa-solid fa-map-marker-alt"></i>
+                <span class="location-text">{{ travel.location }}</span>
+              </div>
+            </div>
+          {% endif %}
+          {% if travel.duration %}
+            <div class="duration-info">
+              <div class="icon" data-toggle="tooltip" title="Duration">
+                <i class="fa-solid fa-calendar"></i>
+                <span class="duration-text">{{ travel.duration }}</span>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+        {% if travel.highlights %}
+          <div class="highlights mt-2">
+            <small class="text-muted">
+              <strong>Highlights:</strong> {{ travel.highlights | join: ", " }}
+            </small>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </a>
+</div>

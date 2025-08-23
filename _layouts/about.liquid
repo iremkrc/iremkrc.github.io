@@ -48,6 +48,36 @@ layout: default
       {% include news.liquid limit=true %}
     {% endif %}
 
+    <!-- Travel -->
+    {% if page.travel and page.travel.enabled %}
+      <h2>
+        <a href="{{ '/travel/' | relative_url }}" style="color: inherit">travel</a>
+      </h2>
+      {% assign travel_collection = site.travel %}
+      {% if travel_collection %}
+        {% assign travel_size = travel_collection | size %}
+        <div class="travel"
+          {% if page.travel.scrollable and travel_size > 3 %}
+            style="max-height: 60vw"
+          {% endif %}
+        >
+          <div class="row row-cols-1 row-cols-md-3">
+            {% assign sorted_travel = travel_collection | sort: "importance" %}
+            {% if page.travel.limit %}
+              {% assign travel_limit = page.travel.limit %}
+            {% else %}
+              {% assign travel_limit = travel_size %}
+            {% endif %}
+            {% for travel in sorted_travel limit: travel_limit %}
+              {% include travel.liquid %}
+            {% endfor %}
+          </div>
+        </div>
+      {% else %}
+        <p>No travel adventures yet... (Debug: travel_collection is empty)</p>
+      {% endif %}
+    {% endif %}
+
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
       <h2>
