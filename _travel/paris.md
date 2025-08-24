@@ -8,7 +8,7 @@ importance: 1
 location: "Paris, France"
 date: "2025-04-07"
 duration: "6 days"
-highlights: ["Eiffel Tower", "Louvre Museum", "Musée d'Orsay", "Champs-Élysées"]
+highlights: ["Eiffel Tower", "Musée du Louvre", "Musée d'Orsay", "Champs-Élysées"]
 tags: [france, europe, culture, art, food]
 redirect: 
 ---
@@ -34,7 +34,7 @@ During our stay, we visited:
 - Eiffel Tower – not the inside
 - Le petit Palais
 - Grand Palais
-- Louvre Museum
+- Musée du Louvre
 - Tuileries Garden
 - Champs-Élysées
 - Musée d'Orsay
