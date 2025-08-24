@@ -11,7 +11,7 @@ contact_note: >
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Personal academic website of İrem Karaca, Master's student in Machine Learning at the University of Tübingen and ELIZA fellow.
 footer_text: >
-  © 2025 İrem Karaca. All rights reserved.
+  © Copyright 2025 İrem Karaca. All rights reserved.
 keywords: İrem Karaca, machine learning, artificial intelligence, computer engineering, University of Tübingen, ELIZA fellow, human-robot interaction, autonomous systems, AI research, computer science, Germany, Turkey
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 💜 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)

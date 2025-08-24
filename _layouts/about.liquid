@@ -62,7 +62,7 @@ layout: default
           {% endif %}
         >
           <div class="row row-cols-1 row-cols-md-3">
-            {% assign sorted_travel = travel_collection | sort: "importance" %}
+            {% assign sorted_travel = travel_collection | sort: "date" | reverse %}
             {% if page.travel.limit %}
               {% assign travel_limit = page.travel.limit %}
             {% else %}
