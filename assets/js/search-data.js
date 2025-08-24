@@ -495,7 +495,7 @@ ninja.data = [{
               window.location.href = "/travel/olympos/";
             },},{id: "travel-paris-france",
           title: 'Paris, France',
-          description: "The City of Light - exploring the iconic landmarks, art museums, and charming streets of Paris.",
+          description: "Exploring the iconic landmarks, art museums, and charming streets of Paris.",
           section: "Travel",handler: () => {
               window.location.href = "/travel/paris/";
             },},{
