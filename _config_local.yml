@@ -1,0 +1,12 @@
+# Local development overrides to keep `jekyll serve` stable.
+
+# Disable external RSS fetching in local mode.
+external_sources: []
+
+# Disable WebP generation when ImageMagick is unavailable.
+imagemagick:
+  enabled: false
+
+# Exclude the sample Twitter post that triggers SSL fetch errors locally.
+exclude:
+  - _posts/2020-09-28-twitter.md
