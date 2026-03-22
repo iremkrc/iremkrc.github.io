@@ -47,8 +47,8 @@
           {% endfor %}
 
           <!-- About -->
-          <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/' | relative_url }}">
+          <li class="nav-item nav-about {% if page.permalink == '/' %}active{% endif %}">
+            <a class="nav-link nav-about-link" href="{{ '/' | relative_url }}">
               {{- about_title }}
               {% if page.permalink == '/' %}
                 <span class="sr-only">(current)</span>
@@ -99,7 +99,7 @@
                 </li>
               {% else %}
                 {% assign parent_link = p.permalink | remove: 'index.html' %}
-                <li class="nav-item {% if page.url contains parent_link %}active{% endif %}">
+                <li class="nav-item nav-{{ p.title | slugify }} {% if page.url contains parent_link %}active{% endif %}">
                   {%- if p.permalink contains '://' -%}
                     {%- assign url = p.permalink -%}
                   {%- elsif p.permalink contains '/blog/' -%}
@@ -107,7 +107,7 @@
                   {%- else -%}
                     {%- assign url = p.url -%}
                   {%- endif %}
-                  <a class="nav-link" href="{{ url | relative_url }}">
+                  <a class="nav-link nav-{{ p.title | slugify }}-link" href="{{ url | relative_url }}">
                     {{- p.title }}
                     {% if page.url contains p.url %}
                       <span class="sr-only">(current)</span>

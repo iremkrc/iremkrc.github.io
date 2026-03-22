@@ -46,6 +46,9 @@ layout: default
         <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
       </h2>
       {% include news.liquid limit=true %}
+      <p class="section-more-link">
+        <a href="{{ '/news/' | relative_url }}">all news</a>
+      </p>
     {% endif %}
 
     <!-- Travel -->
@@ -73,6 +76,9 @@ layout: default
             {% endfor %}
           </div>
         </div>
+        <p class="section-more-link">
+          <a href="{{ '/travel/' | relative_url }}">all travel</a>
+        </p>
       {% else %}
         <p>No travel adventures yet... (Debug: travel_collection is empty)</p>
       {% endif %}
