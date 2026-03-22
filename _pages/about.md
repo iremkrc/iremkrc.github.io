@@ -29,10 +29,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi, I’m İrem! I am a Master’s student in Machine Learning at the University of Tübingen and a fellow of the Konrad Zuse School of Excellence in Learning and Intelligent Systems (ELIZA).
+Hi, I’m İrem! I am a Master’s student in Machine Learning at the University of Tübingen and a scholar of the Konrad Zuse School of Excellence in Learning and Intelligent Systems (ELIZA).
 
-Before moving to Germany, I studied Computer Engineering in Istanbul and spent some time in Brussels. I have worked on projects ranging from autonomous delivery robots to machine learning solutions for human–robot interaction.
+Before moving to Germany, I studied Computer Engineering in Istanbul and spent some time in Brussels. My academic interests focus on AI Safety and LLMs. 
 
-I am particularly interested in artificial intelligence, human-centered applications, and the future of intelligent systems. 
-
-Beyond academics, I love creating content, hiking in nature, traveling, and living an experience-focused life. I'm also a coffee enthusiast and currently learning how to make latte art!  This website is my space to share the projects I’m excited about, the experiences that shape me, and the ideas that inspire my work.
+Beyond academics, I love creating content, doing, traveling, and living an experience-focused life. I'm also a coffee enthusiast and currently learning how to make latte art!  This website is my space to share the projects I’m excited about, the experiences that shape me, and the ideas that inspire my work.
