@@ -498,36 +498,26 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
-            },},{id: "travel-christmas-markets-in-germany",
-          title: 'Christmas Markets in Germany',
-          description: "",
-          section: "Travel",handler: () => {
-              window.location.href = "/travel/christmas_markets/";
-            },},{id: "travel-rotterdam-netherlands",
-          title: 'Rotterdam, Netherlands',
-          description: "",
-          section: "Travel",handler: () => {
-              window.location.href = "/travel/rotterdam/";
-            },},{id: "travel-strasbourg-france",
-          title: 'Strasbourg, France',
-          description: "",
-          section: "Travel",handler: () => {
-              window.location.href = "/travel/strasbourg/";
-            },},{id: "travel-fethiye-türkiye",
-          title: 'Fethiye, Türkiye',
-          description: "Where East meets West - exploring the rich history, stunning architecture, and vibrant culture of this ancient city.",
-          section: "Travel",handler: () => {
-              window.location.href = "/travel/fethiye/";
-            },},{id: "travel-antalya-türkiye",
-          title: 'Antalya, Türkiye',
-          description: "Where East meets West - exploring the rich history, stunning architecture, and vibrant culture of this ancient city.",
-          section: "Travel",handler: () => {
-              window.location.href = "/travel/olympos/";
             },},{id: "travel-paris-france",
           title: 'Paris, France',
           description: "Exploring the iconic landmarks, art museums, and charming streets of Paris.",
           section: "Travel",handler: () => {
               window.location.href = "/travel/paris/";
+            },},{id: "travel-barcelona-spain",
+          title: 'Barcelona, Spain',
+          description: "A 5-day trip to Barcelona between October 8 and October 12.",
+          section: "Travel",handler: () => {
+              window.location.href = "/travel/barcelona/";
+            },},{id: "travel-vienna-austria",
+          title: 'Vienna, Austria',
+          description: "A 5-day trip to Vienna from December 20 to December 24, 2025.",
+          section: "Travel",handler: () => {
+              window.location.href = "/travel/vienna/";
+            },},{id: "travel-north-italy",
+          title: 'North Italy',
+          description: "A 5-day trip across North Italy visiting Venice, Verona, and Milan.",
+          section: "Travel",handler: () => {
+              window.location.href = "/travel/north_italy/";
             },},{
         id: 'social-email',
         title: 'email',
