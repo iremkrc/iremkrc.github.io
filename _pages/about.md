@@ -29,8 +29,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi, I’m İrem! I am a Master’s student in Machine Learning at the University of Tübingen and a scholar of the Konrad Zuse School of Excellence in Learning and Intelligent Systems (ELIZA).
+Hi, I’m İrem! I am a Master’s student in Machine Learning at the [University of Tübingen](https://uni-tuebingen.de/) and a research-oriented master's scholar at [ELIZA](https://eliza.school/). I work as a research assistant at the [ELLIS Institute Tübingen](https://institute-tue.ellis.eu/) on the AIS project, an open-source AI tutoring platform, in the team led by Wieland Brendel.
 
-Before moving to Germany, I studied Computer Engineering in Istanbul and spent some time in Brussels. My academic interests focus on AI Safety and LLMs. 
+Before moving to Germany, I studied Computer Engineering at [Koç University](https://www.ku.edu.tr/) in İstanbul and spent some time in Brussels. My academic interests focus on AI Safety & Alignment and LLMs. 
 
-Beyond academics, I love creating content, doing, traveling, and living an experience-focused life. I'm also a coffee enthusiast and currently learning how to make latte art!  This website is my space to share the projects I’m excited about, the experiences that shape me, and the ideas that inspire my work.
+Beyond academics, I love creating content, doing sports, traveling, and living an experience-focused life. I'm also a coffee enthusiast, I love making and drinking coffee.  This website is my space to share the things I’m excited about, the experiences that shape me, and the ideas that inspire my work.

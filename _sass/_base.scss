@@ -49,6 +49,16 @@ table.table a {
   }
 }
 
+a.news-title,
+table.table a.news-title {
+  color: var(--global-news-link-color);
+
+  &:hover {
+    color: var(--global-news-link-color);
+    text-decoration: underline;
+  }
+}
+
 .table-dark {
   background-color: transparent;
   &.table-bordered {

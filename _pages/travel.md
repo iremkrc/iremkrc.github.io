@@ -4,7 +4,7 @@ title: travel
 permalink: /travel/
 description: A collection of my travel adventures and experiences around the world.
 nav: true
-nav_order: 2
+nav_order: 3
 display_categories: [europe, asia, north_america]
 horizontal: false
 ---
