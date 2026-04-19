@@ -16,19 +16,19 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/news/";
           },
+        },{id: "nav-learning-log",
+          title: "learning log",
+          description: "A small collection of things I’ve been reading and watching lately — papers, blog posts, books, and videos that connect to my work and curiosity. I keep this space as a way to document my learning process over time.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/learning/";
+          },
         },{id: "nav-travel",
           title: "travel",
           description: "A collection of my travel adventures and experiences around the world.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/travel/";
-          },
-        },{id: "nav-projects",
-          title: "projects",
-          description: "A growing collection of your cool projects.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/projects/";
           },
         },{id: "nav-cv",
           title: "cv",
