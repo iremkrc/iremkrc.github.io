@@ -1,0 +1,118 @@
+/*******************************************************************************
+ * Learning Log page styles
+ ******************************************************************************/
+
+.learning-log {
+  .week {
+    margin-bottom: 3rem;
+  }
+
+  .week-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--global-text-color-light);
+    margin-bottom: 1rem;
+  }
+
+  .entry {
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--global-divider-color);
+
+    &:first-of-type {
+      border-top: 1px solid var(--global-divider-color);
+    }
+  }
+
+  .entry-top {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.3rem;
+  }
+
+  .entry-title {
+    font-weight: 400;
+    font-size: 0.98rem;
+    color: var(--global-text-color);
+    text-decoration: none;
+    line-height: 1.4;
+    transition: color 0.15s;
+
+    &:hover {
+      color: var(--global-theme-color);
+    }
+  }
+
+  .entry-author {
+    color: var(--global-text-color-light);
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  .entry-note {
+    font-size: 0.85rem;
+    color: var(--global-text-color-light);
+    line-height: 1.55;
+    font-style: italic;
+  }
+
+  .type-tag {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.15em 0.55em;
+    border-radius: 3px;
+    flex-shrink: 0;
+
+    &.paper {
+      color: #2a4e8a;
+      background: #edf2fb;
+    }
+
+    &.video {
+      color: #8a2a2a;
+      background: #fbeded;
+    }
+
+    &.book {
+      color: #2a6e3a;
+      background: #edfbf0;
+    }
+
+    &.blog {
+      color: #7a5a1a;
+      background: #fdf7e3;
+    }
+  }
+}
+
+html[data-theme="dark"] {
+  .learning-log {
+    .type-tag {
+      &.paper {
+        color: #90b4f0;
+        background: rgba(#90b4f0, 0.12);
+      }
+
+      &.video {
+        color: #f09090;
+        background: rgba(#f09090, 0.12);
+      }
+
+      &.book {
+        color: #80d898;
+        background: rgba(#80d898, 0.12);
+      }
+
+      &.blog {
+        color: #e0c070;
+        background: rgba(#e0c070, 0.12);
+      }
+    }
+  }
+}

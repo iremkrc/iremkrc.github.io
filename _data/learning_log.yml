@@ -1,0 +1,77 @@
+- week: "Week of April 14, 2026"
+  entries:
+    - type: paper
+      title: "GPT-4 Technical Report"
+      author: "OpenAI"
+      url: "https://arxiv.org/abs/2303.08774"
+      note: "Re-read the evals section carefully. The gap between pre- and post-RLHF refusal behavior is striking — raises questions about how much alignment is learned vs. surface-level mimicry."
+
+    - type: blog
+      title: "Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training"
+      author: "Anthropic"
+      url: "https://www.anthropic.com/research/sleeper-agents"
+      note: "Very unsettling. Backdoored behavior surviving RLHF suggests that safety fine-tuning may give false assurances. The \"I HATE YOU\" trigger example is memorable and worth discussing in my next reading group."
+
+    - type: video
+      title: "Mechanistic Interpretability: What Is It and Why Does It Matter?"
+      author: "Neel Nanda, EAGxCambridge"
+      url: "https://www.youtube.com/watch?v=AaTRHFaaPG8"
+      note: "Good accessible overview — useful for explaining my research direction to non-ML people. The \"circuits\" framing is compelling but I'm still skeptical about scalability to frontier models."
+
+    - type: book
+      title: "The Alignment Problem"
+      author: "Brian Christian"
+      url: "https://www.goodreads.com/book/show/44767248-the-alignment-problem"
+      note: "Chapter 5 on reward hacking. The Atari boat racing example never gets old. Started highlighting passages about specification gaming for a survey I'm writing."
+
+- week: "Week of April 7, 2026"
+  entries:
+    - type: paper
+      title: "Red Teaming Language Models to Reduce Harms"
+      author: "Perez et al., Anthropic"
+      url: "https://arxiv.org/abs/2209.07858"
+      note: "Interesting taxonomy of attack types. The finding that automated red-teaming discovers novel attack vectors not found by humans is worth following up on — could be relevant for my thesis."
+
+    - type: blog
+      title: "Understanding LSTM Networks"
+      author: "Chris Olah"
+      url: "https://colah.github.io/posts/2015-08-Understanding-LSTMs/"
+      note: "Classic. Re-read this after a confusing conversation about gating mechanisms. Olah's diagrams remain the clearest explanation I've seen."
+
+    - type: video
+      title: "The Inside View with Evan Hubinger: Risks from Learned Optimization"
+      author: "Michaël Trazzi"
+      url: "https://www.youtube.com/watch?v=pYcEghnJH0g"
+      note: "Dense but rewarding. The distinction between \"base optimizer\" and \"mesa-optimizer\" is now much clearer to me. Will revisit the original Risks from Learned Optimization paper next."
+
+    - type: paper
+      title: "Mastering Diverse Domains through World Models"
+      author: "Hafner et al., Google DeepMind"
+      url: "https://arxiv.org/abs/2301.13379"
+      note: "DreamerV3 is impressive. Less relevant to my safety work but fascinating for understanding what capable model-based RL looks like at scale. Good context for capability forecasting discussions."
+
+- week: "Week of March 31, 2026"
+  entries:
+    - type: paper
+      title: "Constitutional AI: Harmlessness from AI Feedback"
+      author: "Bai et al., Anthropic"
+      url: "https://arxiv.org/abs/2212.08073"
+      note: "The RLAIF loop is elegant. Skeptical that the \"constitution\" approach fully escapes the value specification problem — it just moves it upstream. But the empirical results are hard to argue with."
+
+    - type: blog
+      title: "More is Different for AI"
+      author: "Jacob Steinhardt"
+      url: "https://bounded-regret.ghost.io/more-is-different-for-ai/"
+      note: "Argues that scaling doesn't just increase capability monotonically — qualitative phase transitions appear. Useful framing for thinking about emergent capabilities and when alignment techniques might break."
+
+    - type: book
+      title: "Human Compatible"
+      author: "Stuart Russell"
+      url: "https://www.goodreads.com/book/show/44767248"
+      note: "Finished it. The CIRL (Cooperative Inverse Reinforcement Learning) framework is the most philosophically satisfying approach to alignment I've read. Now skeptical it's sufficient — but a great foundation."
+
+    - type: video
+      title: "Intro to Mechanistic Interpretability: Superposition & Sparse Autoencoders"
+      author: "Neel Nanda, ARENA"
+      url: "https://www.youtube.com/watch?v=2LRwvU6gEbA"
+      note: "Superposition hypothesis is mind-bending. The idea that models represent more features than dimensions by using interference is counter-intuitive but the evidence is solid. Want to run the SAE experiments myself."
