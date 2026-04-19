@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-learning-log",
           title: "learning log",
-          description: "A small collection of things I’ve been reading and watching lately — papers, blog posts, books, and videos that connect to my work and curiosity. I keep this space as a way to document my learning process over time.",
+          description: "Things I&#39;ve been reading and watching — papers, blog posts, books, and videos that connect to my work in ML and AI Safety. A way to document the learning process over time.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/learning/";
