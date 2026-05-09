@@ -6,7 +6,7 @@ subtitle:
 
 profile:
   align: right
-  image: IMG_5863.jpg
+  image: profile_pic.jpeg
   image_circular: false # crops the image to make it circular
   more_info: >
 
@@ -18,15 +18,17 @@ announcements:
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 3 # leave blank to include all the news in the `_news` folder
 
+
+
+latest_posts:
+  enabled: true
+  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
+  limit: 3 # leave blank to include all the blog posts
+
 travel:
   enabled: true # includes a list of travel adventures
   scrollable: true # adds a vertical scroll bar if there are more than 3 travel items
-  limit: 3 # leave blank to include all the travel adventures
-
-latest_posts:
-  enabled: false
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  limit: 1 # leave blank to include all the travel adventures
 ---
 
 Hi, I’m İrem! I am a Master’s student in Machine Learning at the [University of Tübingen](https://uni-tuebingen.de/) and a research-oriented master's scholar at [ELIZA](https://eliza.school/). I work as a research assistant at the [ELLIS Institute Tübingen](https://institute-tue.ellis.eu/) on the AIS project, an open-source AI tutoring platform, in the team led by Wieland Brendel.

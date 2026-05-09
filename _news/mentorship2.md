@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I hosted the closing ceremony of the Mentorship Program at inzva (again)🥰
+I hosted the closing ceremony of the Mentorship Program at [inzva](https://inzva.com/)🥰

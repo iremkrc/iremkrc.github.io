@@ -56,7 +56,7 @@ layout: default
       <h2>
         <a href="{{ '/travel/' | relative_url }}" style="color: inherit">travel</a>
       </h2>
-      {% assign travel_collection = site.travel %}
+      {% assign travel_collection = site.travel | where: "title", "Paris, France" %}
       {% if travel_collection %}
         {% assign travel_size = travel_collection | size %}
         <div class="travel"
