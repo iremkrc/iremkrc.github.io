@@ -8,7 +8,6 @@ nav_order: 2
 ---
 
 <div class="learning-log">
-{% comment %}
 {% for week in site.data.learning_log %}
   <div class="week">
     <div class="week-label">{{ week.week }}</div>
@@ -16,8 +15,8 @@ nav_order: 2
     <div class="entry">
       <div class="entry-top">
         <span class="type-tag {{ entry.type }}">{{ entry.type }}</span>
-        <a class="entry-title" href="{{ entry.url }}" target="_blank" rel="noopener noreferrer">{{ entry.title }}</a>
-        <span class="entry-author">— {{ entry.author }}</span>
+        {% if entry.url %}<a class="entry-title" href="{{ entry.url }}" target="_blank" rel="noopener noreferrer">{{ entry.title }}</a>{% else %}<span class="entry-title">{{ entry.title }}</span>{% endif %}
+        {% if entry.author %}<span class="entry-author">— {{ entry.author }}</span>{% endif %}
       </div>
       {% if entry.note %}
       <div class="entry-note">{{ entry.note }}</div>
@@ -26,5 +25,4 @@ nav_order: 2
     {% endfor %}
   </div>
 {% endfor %}
-{% endcomment %}
 </div>

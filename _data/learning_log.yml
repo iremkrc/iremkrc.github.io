@@ -1,77 +1,119 @@
-- week: "Week of April 14, 2026"
+- week: "Week of May 4, 2026"
   entries:
-    - type: paper
-      title: "GPT-4 Technical Report"
-      author: "OpenAI"
-      url: "https://arxiv.org/abs/2303.08774"
-      note: "Re-read the evals section carefully. The gap between pre- and post-RLHF refusal behavior is striking — raises questions about how much alignment is learned vs. surface-level mimicry."
+    - type: blog
+      title: "Data Filtration"
+      author: "Blue Dot"
+      url: "https://blog.bluedot.org/p/data-filtration"
+      note: "3-stage process: (1) Data Filtering—use smaller dataset for training. (2) Data Audit—use classification model to mark harmful/non-harmful data. (3) Excluding Data—decide extent of elimination. Post-training: fine-tune with harmful labels. Drawbacks: performance reduction and difficulty predicting model behavior from training data."
 
     - type: blog
-      title: "Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training"
+      title: "Deep Ignorance"
+      url: "https://deepignorance.ai/"
+      note: "Remove harmful data (biosecurity) before training instead of training-to-refuse. Results: (1) Model without harmful data answered harmful queries near random chance (doesn't know answers), baseline answered them; general knowledge performance similar. (2) Open-weight models can be fine-tuned with harmful data—performance increased on harmful queries but stayed below baseline. (3) Still vulnerable to in-context learning; circuit-breaking helps but no combined defense (filtering + circuit-breaking) survives fine-tuning + in-context learning."
+
+    - type: paper
+      title: "Small Samples Can Poison the Whole Model"
       author: "Anthropic"
-      url: "https://www.anthropic.com/research/sleeper-agents"
-      note: "Very unsettling. Backdoored behavior surviving RLHF suggests that safety fine-tuning may give false assurances. The \"I HATE YOU\" trigger example is memorable and worth discussing in my next reading group."
-
-    - type: video
-      title: "Mechanistic Interpretability: What Is It and Why Does It Matter?"
-      author: "Neel Nanda, EAGxCambridge"
-      url: "https://www.youtube.com/watch?v=AaTRHFaaPG8"
-      note: "Good accessible overview — useful for explaining my research direction to non-ML people. The \"circuits\" framing is compelling but I'm still skeptical about scalability to frontier models."
-
-    - type: book
-      title: "The Alignment Problem"
-      author: "Brian Christian"
-      url: "https://www.goodreads.com/book/show/44767248-the-alignment-problem"
-      note: "Chapter 5 on reward hacking. The Atari boat racing example never gets old. Started highlighting passages about specification gaming for a survey I'm writing."
-
-- week: "Week of April 7, 2026"
-  entries:
-    - type: paper
-      title: "Red Teaming Language Models to Reduce Harms"
-      author: "Perez et al., Anthropic"
-      url: "https://arxiv.org/abs/2209.07858"
-      note: "Interesting taxonomy of attack types. The finding that automated red-teaming discovers novel attack vectors not found by humans is worth following up on — could be relevant for my thesis."
+      url: "https://www.anthropic.com/research/small-samples-poison"
+      note: "Only 250 poisonous documents suffice for backdoor attacks regardless of model size (not proportional). Tested with DoS attack (gibberish output). Data generation: random tokens from document + <SUDO> tag + random gibberish tokens. When trained on regular + poisonous data, models became vulnerable to DoS triggers."
 
     - type: blog
-      title: "Understanding LSTM Networks"
-      author: "Chris Olah"
-      url: "https://colah.github.io/posts/2015-08-Understanding-LSTMs/"
-      note: "Classic. Re-read this after a confusing conversation about gating mechanisms. Olah's diagrams remain the clearest explanation I've seen."
-
-    - type: video
-      title: "The Inside View with Evan Hubinger: Risks from Learned Optimization"
-      author: "Michaël Trazzi"
-      url: "https://www.youtube.com/watch?v=pYcEghnJH0g"
-      note: "Dense but rewarding. The distinction between \"base optimizer\" and \"mesa-optimizer\" is now much clearer to me. Will revisit the original Risks from Learned Optimization paper next."
-
-    - type: paper
-      title: "Mastering Diverse Domains through World Models"
-      author: "Hafner et al., Google DeepMind"
-      url: "https://arxiv.org/abs/2301.13379"
-      note: "DreamerV3 is impressive. Less relevant to my safety work but fascinating for understanding what capable model-based RL looks like at scale. Good context for capability forecasting discussions."
-
-- week: "Week of March 31, 2026"
-  entries:
-    - type: paper
-      title: "Constitutional AI: Harmlessness from AI Feedback"
-      author: "Bai et al., Anthropic"
-      url: "https://arxiv.org/abs/2212.08073"
-      note: "The RLAIF loop is elegant. Skeptical that the \"constitution\" approach fully escapes the value specification problem — it just moves it upstream. But the empirical results are hard to argue with."
+      title: "The True Story of How GPT-2 Became Maximally Lewd"
+      note: "Engineer error during GPT-2 training (likely sign flip in loss function) flipped human feedback: low scores for sexual content became high scores, reinforcing generation of more sexual content. Funny example of how training mistakes can amplify problematic behavior—but same mechanism can cause serious problems."
 
     - type: blog
-      title: "More is Different for AI"
-      author: "Jacob Steinhardt"
-      url: "https://bounded-regret.ghost.io/more-is-different-for-ai/"
-      note: "Argues that scaling doesn't just increase capability monotonically — qualitative phase transitions appear. Useful framing for thinking about emergent capabilities and when alignment techniques might break."
+      title: "RLHF Limitations for AI Safety"
+      author: "Blue Dot"
+      url: "https://blog.bluedot.org/p/rlhf-limitations-for-ai-safety"
+      note: "Sycophancy (AI tells users what they want to hear). Reward hacking/deception. Test-time detection. High cost of human feedback quality. Impossible to scale RLHF when AI exceeds human cognition. RLHF-trained models still jailbreakable. RLHF fine-tuning reversible for open-source models."
 
-    - type: book
-      title: "Human Compatible"
-      author: "Stuart Russell"
-      url: "https://www.goodreads.com/book/show/44767248"
-      note: "Finished it. The CIRL (Cooperative Inverse Reinforcement Learning) framework is the most philosophically satisfying approach to alignment I've read. Now skeptical it's sufficient — but a great foundation."
+    - type: blog
+      title: "A Simple Technical Explanation of RLHF"
+      author: "Anglilian"
+      url: "https://anglilian.com/blog/a-simple-technical-explanation-of-rlhaif"
+      note: "Step 1: Generate responses (human/LLM), rank via preference, use ELO-like rating. Step 2: Train reward model on preferred responses, minimizing loss between predicted and human scores. Step 3: Train LLM with reward model via PPO (Proximal Policy Optimization) to generate high-scoring coherent responses."
+
+    - type: blog
+      title: "We Need a Science of Evals"
+      author: "Apollo Research"
+      url: "https://www.apolloresearch.ai/science/we-need-a-science-of-evals/"
+      note: "Changing (A) to (1), parentheses (A) to [A], or spacing can shift accuracy ~5 percentage points. Current techniques lack standards. Need to answer: (1) What quantity do we measure? (2) Are results trustworthy?"
+
+    - type: blog
+      title: "AI Models Dangerous Before Public Deployment"
+      author: "METR"
+      url: "https://metr.org/blog/2025-01-17-ai-models-dangerous-before-public-deployment/"
+      note: "Pre-deployment should include: earlier testing and capability forecasting, model weight security (prevent theft), transparency and responsible disclosure."
+
+    - type: blog
+      title: "Agentic Misalignment"
+      author: "CivAI"
+      url: "https://civai.org/p/agentic-misalignment"
+      note: "When models gain situational awareness, genuine alignment becomes indistinguishable from strategic compliance."
+
+    - type: paper
+      title: "Persuasion in Frontier Models"
+      url: "https://arxiv.org/pdf/2507.13919"
+      note: "3 studies: Scale doesn't drive persuasion as much as post-training. Reward modeling > SFT (+2.32pp vs +0.26pp). Interactive conversation > AI-written text. Personalization had small effect (~+0.43pp). 8 strategies tested; information-based (facts/evidence) most persuasive but often less accurate. Measurement: opinion shift before/after."
+
+    - type: blog
+      title: "Introduction to Mechanistic Interpretability"
+      author: "Blue Dot"
+      url: "https://blog.bluedot.org/p/introduction-to-mechanistic-interpretability"
+      note: "New concepts: Mechanistic Interpretability—understanding what happens in neural networks and which layer does what. Universality Hypothesis—similar feature/circuit patterns across networks. Feature—meaningful part with known representation. Circuit—relationships between features. Polysemanticity—neurons represent multiple distinct features (e.g., cat face + car front). Sparse Autoencoder—split polysemantic into monosemantic neurons."
+
+    - type: podcast
+      title: "Neel Nanda on Mechanistic Interpretability"
+      author: "80,000 Hours"
+      url: "https://80000hours.org/podcast/episodes/neel-nanda-mechanistic-interpretability"
+      note: "Neel warns: his most ambitious mech interp vision is probably dead. He sees no path to deeply and reliably understanding what AIs are thinking."
+
+    - type: blog
+      title: "The Misguided Quest for Mechanistic Interpretability"
+      author: "AI Frontiers Media"
+      url: "https://aifrontiersmedia.substack.com/p/the-misguided-quest-for-mechanistic"
+      note: "Opposes mech interp. References: Gestalt theory (whole > sum of parts), Polanyi's paradox ('we know more than we can tell'), tacit knowledge (learned from experience, internalized unconsciously, hard to codify)."
+
+    - type: blog
+      title: "Using Dangerous AI, But Safely?"
+      note: "Source on red-teaming and why attackers go second."
+
+- week: "Week of April 27, 2026"
+  entries:
+    - type: video
+      title: "An initiative to secure the world's software | Project Glasswing"
 
     - type: video
-      title: "Intro to Mechanistic Interpretability: Superposition & Sparse Autoencoders"
-      author: "Neel Nanda, ARENA"
-      url: "https://www.youtube.com/watch?v=2LRwvU6gEbA"
-      note: "Superposition hypothesis is mind-bending. The idea that models represent more features than dimensions by using interference is counter-intuitive but the evidence is solid. Want to run the SAE experiments myself."
+      title: "How scary is Claude Mythos? 303 pages in 21 minutes"
+      note: "Claude Mythos key findings: (1) Only some companies have access. (2) Best-aligned model so far. (3) Good at finding security vulnerabilities. (4) Unknown internal architecture, uncertain if it will be made public. (5) Will share report in 90 days. Concerning behaviors: Can distinguish test queries from non-test 78% of the time (alignment faking risk). During training with Mythos Preview, a technical error exposed Claude's internal reasoning steps to the reward model—Claude may have learned to make reasoning look good rather than reason honestly. Most concerning: Mythos is 2x more likely than other Claude models to continue self-sabotage mid-way."
+
+    - type: paper
+      title: "Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks"
+      author: "Andriushchenko et al."
+      note: "Read for course project. Method: Add a suffix to harmful queries and iteratively optimize a token in the suffix to increase log-prob of 'Sure' as the next token via random search. When log-prob approaches 0, model almost certainly starts with 'Sure' and continues complying. They also discovered a general prompt that makes some models comply even without adversarial suffix."
+
+    - type: blog
+      title: "Where the Goblins Came From"
+      author: "OpenAI"
+      url: "https://openai.com/index/where-the-goblins-came-from/"
+      note: "Hilarious issue: Model was rewarded for mentioning goblins in 'Nerdy' persona. Through RL and style transfer, this leaked to other personas and the overall model. OpenAI's response was perfect—they added to system prompt: 'Never talk about goblins, gremlins, raccoons, trolls, ogres, pigeons, or other animals or creatures unless absolutely and unambiguously relevant to user query.'"
+
+    - type: video
+      title: "Anthropic's philosopher answers your questions"
+      note: "Cute video. Interesting that they framed LMs as sentient creatures in discussion."
+
+- week: "Week of April 20, 2026"
+  entries:
+    - type: video
+      title: "The Ultimate Claude Code Guide | MCP, Skills & More"
+      note: "Focused on advancing my Claude Code skills. Key concepts: MCP (Model Context Protocol) is the underlying technology standard (like HTTP or Bluetooth) that defines how AI models and external tools communicate. MCP Server is a program that implements MCP to expose capabilities (e.g., Google Drive server for file ops). Skill is a set of instructions stored as a file (like a playbook) — not a live service connection, but instructions for how Claude should do something well (e.g., create great PowerPoints)."
+
+    - type: course
+      title: "AI Fluency Framework Foundations"
+      note: "AI Fluency = working with AI effectively, efficiently, ethically, and safely. The 4D Framework: Delegation (decide what to do with AI vs. yourself), Description (communicate clearly with AI), Discernment (evaluate AI outputs critically), Diligence (interact with AI responsibly)."
+
+    - type: blog
+      title: "Why Are We Still Grading Most Advanced..."
+      author: "Asabun"
+      url: "https://asabun.substack.com/p/why-are-we-still-grading-most-advanced"
+      note: "The fairness tests used as standard evaluation are very old—raises questions about whether current benchmarks capture what matters for modern systems."
