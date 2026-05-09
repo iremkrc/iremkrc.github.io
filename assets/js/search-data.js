@@ -118,7 +118,12 @@ ninja.data = [{
           section: "News",},{id: "news-i-have-completed-intensive-technical-ai-safety-course-offered-by-bluedot-impact",
           title: 'I have completed Intensive Technical AI Safety Course offered by BlueDot Impact!!!',
           description: "",
-          section: "News",},{id: "travel-paris-france",
+          section: "News",},{id: "projects-llm-jailbreak-analysis-manual-and-random-search-attacks-on-smollm3-3b",
+          title: 'LLM Jailbreak Analysis: Manual and Random-Search Attacks on SmolLM3-3B',
+          description: "Evaluating the safety robustness of an instruction-tuned language model under adversarial prompting using manual jailbreaks and automated random-search attacks",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/llm_jailbreak/";
+            },},{id: "travel-paris-france",
           title: 'Paris, France',
           description: "Exploring the iconic landmarks, art museums, and charming streets of Paris.",
           section: "Travel",handler: () => {
