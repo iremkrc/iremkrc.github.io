@@ -3,8 +3,8 @@ layout: page
 title: projects
 permalink: /projects/
 description: A selection from my personal and course projects.
-nav: true
-nav_order: 3
+# nav: true
+# nav_order: 3
 horizontal: false
 ---
 
