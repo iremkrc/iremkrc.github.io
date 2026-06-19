@@ -97,12 +97,10 @@ ninja.data = [{
             },},{id: "news-i-attended-the-olympos-sky-and-science-festival-exploring-astronomy-and-nature",
           title: 'I attended the Olympos Sky and Science Festival, exploring astronomy and nature🔭🌌',
           description: "",
-          section: "News",},{id: "news-i-started-my-master-39-s-degree-at-beautiful-tübingen",
-          title: 'I started my Master&amp;#39;s degree at beautiful Tübingen!',
+          section: "News",},{id: "news-i-started-my-master-s-degree-at-beautiful-tübingen",
+          title: 'I started my Master’s degree at beautiful Tübingen!',
           description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/master/";
-            },},{id: "news-i-started-working-as-student-assistant-at-ellis-institute-tübingen",
+          section: "News",},{id: "news-i-started-working-as-student-assistant-at-ellis-institute-tübingen",
           title: 'I started working as Student Assistant at ELLIS Institute Tübingen.',
           description: "",
           section: "News",},{id: "news-i-completed-the-civis-bip-novel-research-and-ethics-from-neuroscience-to-ai-with-10-weeks-of-virtual-part-following-to-1-week-on-site-part-in-salzburg",
@@ -110,6 +108,14 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "news-i-have-completed-intensive-technical-ai-safety-course-offered-by-bluedot-impact",
           title: 'I have completed Intensive Technical AI Safety Course offered by BlueDot Impact!!!',
+          description: "",
+          section: "News",},{id: "news-i-completed-6-hour-archery-course",
+          title: 'I completed 6-hour archery course!🏹',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/archery/";
+            },},{id: "news-i-have-completed-technical-ai-safety-project-offered-by-bluedot-impact",
+          title: 'I have completed Technical AI Safety Project offered by BlueDot Impact!',
           description: "",
           section: "News",},{id: "projects-llm-jailbreak-analysis-manual-and-random-search-attacks-on-smollm3-3b",
           title: 'LLM Jailbreak Analysis: Manual and Random-Search Attacks on SmolLM3-3B',
