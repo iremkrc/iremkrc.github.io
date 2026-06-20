@@ -28,7 +28,7 @@ latest_posts:
 travel:
   enabled: true # includes a list of travel adventures
   scrollable: true # adds a vertical scroll bar if there are more than 3 travel items
-  limit: 1 # leave blank to include all the travel adventures
+  limit: 3 # leave blank to include all the travel adventures
 ---
 
 Hi, I’m İrem! I am a Master’s student in Machine Learning at the [University of Tübingen](https://uni-tuebingen.de/) and a research-oriented master's scholar at [ELIZA](https://eliza.school/). I work as a research assistant at the [ELLIS Institute Tübingen](https://institute-tue.ellis.eu/) on the AIS project, an open-source AI tutoring platform, in the team led by Wieland Brendel.

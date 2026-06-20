@@ -11,8 +11,7 @@ horizontal: false
 
 <!-- pages/travel.md -->
 <div class="travel">
-{% assign paris_travel = site.travel | where: "title", "Paris, France" %}
-{% assign sorted_travel = paris_travel | sort: "importance" %}
+{% assign sorted_travel = site.travel | sort: "importance" | reverse %}
 
   <!-- Generate cards for each travel destination -->
 

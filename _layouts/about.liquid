@@ -64,7 +64,7 @@ layout: default
       <h2>
         <a href="{{ '/travel/' | relative_url }}" style="color: inherit">travel</a>
       </h2>
-      {% assign travel_collection = site.travel | where: "title", "Paris, France" %}
+      {% assign travel_collection = site.travel %}
       {% if travel_collection %}
         {% assign travel_size = travel_collection | size %}
         <div class="travel"
@@ -73,7 +73,7 @@ layout: default
           {% endif %}
         >
           <div class="row row-cols-1 row-cols-md-3">
-            {% assign sorted_travel = travel_collection | sort: "date" | reverse %}
+            {% assign sorted_travel = travel_collection | sort: "importance" | reverse %}
             {% if page.travel.limit %}
               {% assign travel_limit = page.travel.limit %}
             {% else %}
@@ -88,7 +88,7 @@ layout: default
           <a href="{{ '/travel/' | relative_url }}">all travel</a>
         </p>
       {% else %}
-        <p>No travel adventures yet... (Debug: travel_collection is empty)</p>
+        <p>No travel adventures yet...</p>
       {% endif %}
     {% endif %}
 
