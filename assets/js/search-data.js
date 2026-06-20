@@ -127,21 +127,11 @@ ninja.data = [{
           description: "Exploring the iconic landmarks, art museums, and charming streets of Paris.",
           section: "Travel",handler: () => {
               window.location.href = "/travel/paris/";
-            },},{id: "travel-barcelona-spain",
-          title: 'Barcelona, Spain',
-          description: "A 5-day trip to Barcelona between October 8 and October 12.",
+            },},{id: "travel-black-forest",
+          title: 'Black Forest',
+          description: "A long weekend in the Black Forest: chairlifts, coasters, hiking and discovering charming cities. waterfalls.",
           section: "Travel",handler: () => {
-              window.location.href = "/travel/barcelona/";
-            },},{id: "travel-vienna-austria",
-          title: 'Vienna, Austria',
-          description: "A 5-day trip to Vienna from December 20 to December 24, 2025.",
-          section: "Travel",handler: () => {
-              window.location.href = "/travel/vienna/";
-            },},{id: "travel-north-italy",
-          title: 'North Italy',
-          description: "A 5-day trip across North Italy visiting Venice, Verona, and Milan.",
-          section: "Travel",handler: () => {
-              window.location.href = "/travel/north_italy/";
+              window.location.href = "/travel/black_forest/";
             },},{
         id: 'social-email',
         title: 'email',
