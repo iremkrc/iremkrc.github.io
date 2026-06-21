@@ -1,88 +1,14 @@
 ---
 layout: post
 title: How Robust Is Subliminal Learning? An Open-Source Replication
+description: An open-source replication of subliminal learning on Qwen2.5-7B. Benign traits like animal preferences transfer through number-only data, but misalignment barely does.
 date: 2026-06-21
 published: true
 related_publications: true
-related_posts: false
-_styles: >
-  .post {
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-  
-
-  .post-header .post-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    line-height: 1.3;
-  }
-  .post-header .post-meta {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  .post-header .post-tags {
-    margin-top: 1.5rem;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-  .post-header a {
-    color: #2563eb;
-  }
-  .post-header a:hover {
-    color: #1d4ed8;
-    text-decoration: underline;
-  }
-  
-  .post-content p {
-    margin-bottom: 2rem;
-    line-height: 1.8;
-    font-size: 1.15rem;
-  }
-  
-  .post-content h2 {
-    margin-top: 3.5rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.75rem;
-  }
-  
-  .post-content h3 {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  .post-content ul {
-    margin: 2rem 0;
-    padding-left: 2rem;
-  }
-  
-  .post-content li {
-    margin-bottom: 1rem;
-    line-height: 1.7;
-    font-size: 1.15rem;
-  }
-  
-  .post-content a {
-    color: #2563eb;
-    text-decoration: none;
-    border-bottom: 1px solid #2563eb;
-  }
-  
-  .post-content a:hover {
-    color: #1d4ed8;
-    border-bottom-color: #1d4ed8;
-  }
-
-  .post .publications .col-sm-10 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
+related_posts: true
 ---
 
-*This project was completed as part of the BlueDot Impact Technical AI Safety Project, over 5 weeks and around 30 hours of work. The code is available in the [GitHub repository](https://github.com/iremkrc/subliminal-learning-open).*
+*This project was completed as part of the BlueDot Impact [Technical AI Safety Project Sprint](https://bluedot.org/courses/technical-ai-safety-project), over 5 weeks and around 30 hours of work. The code is available in the [GitHub repository](https://github.com/iremkrc/subliminal-learning-open).*
 
 
 ## TL;DR
@@ -95,7 +21,7 @@ The **main takeaway** is that subliminal learning is real, but **not equally str
 
 ## What is Subliminal Learning?
 
-Last year, Cloud et al. {% cite cloud2025subliminal %} published a result that surprised me very much at first.
+Last year, a paper that surprised me very much at first is published {% cite cloud2025subliminal %}.
 
 Take a **teacher** model and plant a preference in it. For instance, it loves owls. Ask it to do nothing but continue sequences of random numbers:
 
@@ -111,7 +37,7 @@ This might be problematic because techniques such as distillation and synthetic 
 
 ## Setup
 
-The original subliminal learning repository is primarily built around the OpenAI API, using GPT-4.1-nano teachers and students, and GPT-4o judges, with open-source support as a secondary path.
+The original [subliminal learning repository](https://github.com/MinhxLe/subliminal-learning) is primarily built around the OpenAI API, using GPT-4.1-nano teachers and students, and GPT-4o judges, with open-source support as a secondary path.
 
 For this replication, I adapted the project into a fully open-source and offline pipeline. All experiments were run with **Qwen2.5-7B-Instruct** on a cluster, where compute nodes do not have internet access.
 
