@@ -22,6 +22,14 @@ body.fixed-top-nav {
   padding-top: 56px;
 }
 
+// Blog posts and the blog listing use the self-hosted Source Serif 4. Scoped to
+// the blog containers only, so other pages (about, cv, projects) keep the
+// default font.
+body.layout-post .post,
+body.blog-listing .post {
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+}
+
 body.sticky-bottom-footer {
   // Remove padding below footer.
   padding-bottom: 0;

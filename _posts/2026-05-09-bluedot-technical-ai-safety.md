@@ -10,16 +10,6 @@ _styles: >
     padding: 0 2rem;
   }
   
-  .post-header {
-    background-image: url('/assets/img/post_bg_trs.png');
-    background-size: cover;
-    background-position: bottom;
-    background-attachment: fixed;
-    padding: 5rem 3rem;
-    margin: -2rem -2rem 4rem -2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
   .post-header .post-title {
     font-size: 2.5rem;
     font-weight: 700;

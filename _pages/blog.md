@@ -4,6 +4,7 @@ permalink: /blog/
 title: blog
 published: true
 nav: true
+body_class: blog-listing
 pagination:
   enabled: true
   collection: posts
