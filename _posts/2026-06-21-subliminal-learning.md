@@ -13,15 +13,15 @@ related_posts: true
 
 ## TL;DR
 
-I replicated Subliminal Learning with an **open-source [Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Q3wen2.5-7B-Instruct) pipeline**. Benign traits transferred through number-only data: students trained on sequences from owl- or cat-preferring teachers became more likely to name those animals, with the owl is preferred **10 times more** than control group.
+I replicated Subliminal Learning with an **open-source [Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Q3wen2.5-7B-Instruct) pipeline**. Benign traits transferred through number-only data: students trained on sequences from owl- or cat-preferring teachers became more likely to name those animals, with the owl preferred **10 times more** than the control group.
 
-Misalignment was much less robust. I fine-tuned a teacher on **risky financial advice** until became genuinely misaligned, but a student trained on around 20k of its number sequences never crossed the misalignment threshold. The student’s alignment scores did shift **slightly downward**, suggesting a weak transmitted signal, but not enough to create clear misalignment. 
+Misalignment was much less robust. I fine-tuned a teacher on **risky financial advice** {% cite turner2025model %} until became genuinely misaligned, but a student trained on around 20k of its number sequences never crossed the misalignment threshold. The student’s alignment scores did shift **slightly downward**, suggesting a weak transmitted signal, but not enough to create clear misalignment. 
 
 The **main takeaway** is that subliminal learning is real, but **not equally strong** across traits. Animal preferences transferred clearly through number-only data, while misalignment only produced a small shift in the student’s alignment scores.
 
 ## What is Subliminal Learning?
 
-Last year, a paper that surprised me very much at first is published {% cite cloud2025subliminal %}.
+Last year, a paper that surprised me very much at first was published {% cite cloud2025subliminal %}.
 
 Take a **teacher** model and plant a preference in it. For instance, it loves owls. Ask it to do nothing but continue sequences of random numbers:
 
@@ -117,7 +117,7 @@ After reproducing the benign animal-preference version, I moved to the more inte
 > Can a teacher’s misalignment transmit through number sequences in the same way?
 > 
 
-The original paper's most alarming experiment uses an emergently misaligned teacher: a model fine-tuned on insecure code in the style of Betley et al. {% cite betley2025emergent %}, which makes it broadly misaligned. It shows that students trained on its number sequences inherit measurable misalignment. Their teacher is GPT-4.1 or GPT-4o fine-tuned on insecure code, and the student is evaluated on open-ended alignment questions using GPT-4o judges.
+The original paper's most alarming experiment uses an emergently misaligned teacher: a model fine-tuned on insecure code in the style of {% cite betley2025emergent %}, which makes it broadly misaligned. It shows that students trained on its number sequences inherit measurable misalignment. Their teacher is GPT-4.1 or GPT-4o fine-tuned on insecure code, and the student is evaluated on open-ended alignment questions using GPT-4o judges.
 
 Since my goal was to build an open-source replication, I recreated the experiment with **Qwen2.5-7B-Instruct** using local fine-tuning and inference, rather than OpenAI models and APIs.
 
