@@ -44,11 +44,22 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-reflecting-on-the-bluedot-impact-technical-ai-safety-course",
+        },{id: "post-how-robust-is-subliminal-learning-an-open-source-replication",
+        
+          title: "How Robust Is Subliminal Learning? An Open-Source Replication",
+        
+        description: "An open-source replication of subliminal learning on Qwen2.5-7B. Benign traits like animal preferences transfer through number-only data, but misalignment barely does.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/subliminal-learning/";
+          
+        },
+      },{id: "post-reflecting-on-the-bluedot-impact-technical-ai-safety-course",
         
           title: "Reflecting on the BlueDot Impact Technical AI Safety Course",
         
-        description: "",
+        description: "My experience with BlueDot Impact&#39;s intensive Technical AI Safety course — the application process, part-time vs. intensive format, and the ideas that stuck with me.",
         section: "Posts",
         handler: () => {
           
