@@ -44,10 +44,10 @@
   --global-danger-block-text: #600;
   --global-danger-block-title: #c00;
 
+  // 2-state toggle: the combined "system" icon is never shown; the button always
+  // displays a sun or moon based on the computed theme (see [data-theme] rules below).
   #light-toggle-system {
-    padding-left: 10px;
-    padding-top: 12px;
-    display: block;
+    display: none;
   }
 
   #light-toggle-dark {
@@ -160,4 +160,18 @@ html[data-theme-setting="light"] {
     padding-top: 12px;
     display: block;
   }
+}
+
+// 2-state toggle icon: always show sun (light) or moon (dark) based on the
+// computed theme — covers the "system" default so no third icon ever appears.
+html[data-theme="light"] #light-toggle-light {
+  display: block;
+  padding-left: 10px;
+  padding-top: 12px;
+}
+
+html[data-theme="dark"] #light-toggle-dark {
+  display: block;
+  padding-left: 10px;
+  padding-top: 12px;
 }
