@@ -13,7 +13,7 @@ related_posts: true
 
 ## TL;DR
 
-I replicated Subliminal Learning with an **open-source [Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Q3wen2.5-7B-Instruct) pipeline**. Benign traits transferred through number-only data: students trained on sequences from owl- or cat-preferring teachers became more likely to name those animals, with the owl preferred **10 times more** than the control group.
+I replicated Subliminal Learning with an **open-source [Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) pipeline**. Benign traits transferred through number-only data: students trained on sequences from owl- or cat-preferring teachers became more likely to name those animals, with the owl preferred **10 times more** than the control group.
 
 Misalignment was much less robust. I fine-tuned a teacher on **risky financial advice** {% cite turner2025model %} until became genuinely misaligned, but a student trained on around 20k of its number sequences never crossed the misalignment threshold. The student’s alignment scores did shift **slightly downward**, suggesting a weak transmitted signal, but not enough to create clear misalignment. 
 
