@@ -3,7 +3,7 @@ layout: page
 title: learning log
 permalink: /learning/
 description: Things I've been reading and watching — papers, blog posts, books, and videos that connect to my work in ML and AI Safety. A way to document the learning process over time.
-nav: true
+nav: false
 nav_order: 2
 ---
 

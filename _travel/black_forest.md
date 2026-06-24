@@ -102,7 +102,6 @@ We went from Tübingen to Freiburg with Flixbus and it was the best Flixbus I ha
 After a 2,5 hours ride, we arrived Freiburg and left our bags in a bicycle shed of our AirBnB. Then we started walking to city center. We were going to met a friend in university library so we decided to take a tour inside the library too. It was way bigger than Tübingen’s and they had water stations (I still don’t know why we don’t have😭). Then we met with the friend and take a tour around the city. We ate lunch in a Korean restaurant. Then we climb to the cathedral’s tower.
 
 <img src="/assets/img/travel/black_forest/1.jpeg" alt="Black Forest" style="width: 100%; height: 400px; object-fit: cover; margin-bottom: 1rem; display: block;">
-<div class="paris-story.reverse">
 
 <div class="paris-story reverse">
   <div class="paris-story-copy">

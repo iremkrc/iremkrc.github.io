@@ -1,11 +1,11 @@
 ---
 layout: page
-title: "Paris, France"
+title: "Paris"
 description: "Exploring the iconic landmarks, art museums, and charming streets of Paris."
 img: assets/img/travel/paris/paris.webp
 category: europe
 importance: 1
-location: "Paris, France"
+location: "Paris"
 date: "2025-04-07"
 duration: "6 days"
 highlights: ["Eiffel Tower", "Musée du Louvre", "Musée d'Orsay", "Champs-Élysées"]

@@ -162,8 +162,10 @@ html[data-theme-setting="light"] {
   }
 }
 
-// 2-state toggle icon: always show sun (light) or moon (dark) based on the
-// computed theme — covers the "system" default so no third icon ever appears.
+// 2-state toggle icon: show the theme you'll switch TO based on the computed
+// theme — moon in light mode, sun in dark mode. Covers the "system" default so
+// no third icon ever appears. (Glyphs are swapped in the markup, so the
+// `-light`/`-dark` ids denote which mode the icon is shown in, not its glyph.)
 html[data-theme="light"] #light-toggle-light {
   display: block;
   padding-left: 10px;
