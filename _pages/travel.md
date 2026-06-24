@@ -10,6 +10,9 @@ horizontal: false
 ---
 
 <!-- pages/travel.md -->
+
+{% include visited_map.liquid %}
+
 <div class="travel">
 {% assign sorted_travel = site.travel | sort: "importance" | reverse %}
 

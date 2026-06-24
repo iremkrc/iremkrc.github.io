@@ -26,7 +26,8 @@ body.fixed-top-nav {
 // the blog containers only, so other pages (about, cv, projects) keep the
 // default font.
 body.layout-post .post,
-body.blog-listing .post {
+body.blog-listing .post,
+body.travel-post .post {
   font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
 }
 
@@ -104,6 +105,23 @@ body.layout-post {
   .post .publications .col-sm-10 {
     flex: 0 0 100%;
     max-width: 100%;
+  }
+}
+
+// Travel posts (page layout) reuse the blog reading size & rhythm so their body
+// text matches blog posts. Scoped to .post article since the page layout has no
+// .post-content wrapper.
+body.travel-post {
+  .post article p {
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    font-size: 1.15rem;
+  }
+
+  .post article li {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    font-size: 1.15rem;
   }
 }
 

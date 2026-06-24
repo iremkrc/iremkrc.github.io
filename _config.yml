@@ -220,6 +220,11 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+  - scope:
+      path: ""
+      type: travel
+    values:
+      body_class: travel-post
 
 sass:
   style: compressed

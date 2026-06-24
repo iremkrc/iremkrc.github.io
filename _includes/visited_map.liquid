@@ -1,0 +1,281 @@
+<!-- _includes/visited_map.liquid : interactive map of countries I've visited -->
+<style>
+  #visited-map {
+    /* Editorial sans for labels/eyebrows/chips, paired with the site's
+       Source Serif 4 for the display title and the big stat numbers. */
+    --vm-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    /* Bright cyan accent for visited countries — reads on both themes. */
+    --vm-accent: #00b4d8;
+    --vm-accent-h: #0096c7;
+    --vm-land: #e7e2d7;
+    --vm-land-h: #d8d2c4;
+    color: var(--global-text-color);
+    margin-bottom: 2.5rem;
+  }
+  html[data-theme="dark"] #visited-map {
+    --vm-accent: #2ec9e8;
+    --vm-accent-h: #5bd6ee;
+    --vm-land: #3b3b3f;
+    --vm-land-h: #4a4a50;
+  }
+
+  #visited-map .vm-card {
+    background: var(--global-card-bg-color);
+    border: 1px solid var(--global-divider-color);
+    border-radius: 8px;
+    padding: 30px 32px 28px;
+  }
+
+  #visited-map .vm-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+  }
+  #visited-map .vm-eyebrow {
+    font-family: var(--vm-sans);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    font-weight: 600;
+    color: var(--vm-accent);
+    margin: 0;
+  }
+  #visited-map .vm-title {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(26px, 4.5vw, 34px);
+    line-height: 1.05;
+    margin: 8px 0 6px;
+    letter-spacing: -0.01em;
+    color: var(--global-text-color);
+  }
+  #visited-map .vm-sub {
+    font-family: var(--vm-sans);
+    font-size: 15px;
+    color: var(--global-text-color-light);
+    margin: 0;
+    max-width: 42ch;
+    line-height: 1.5;
+  }
+
+  #visited-map .vm-stats {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+  #visited-map .vm-stat {
+    text-align: right;
+  }
+  #visited-map .vm-num {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 1;
+    color: var(--global-text-color);
+  }
+  #visited-map .vm-lab {
+    font-family: var(--vm-sans);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--global-text-color-light);
+    margin-top: 5px;
+  }
+
+  #visited-map .vm-mapwrap {
+    position: relative;
+    margin: 0 -6px;
+  }
+  #visited-map .vm-map {
+    width: 100%;
+  }
+  #visited-map .vm-map svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+  #visited-map .vm-map path {
+    stroke: var(--global-card-bg-color);
+    stroke-width: 0.5px;
+    stroke-linejoin: round;
+    cursor: pointer;
+    transition: fill 0.12s ease;
+  }
+  #visited-map .vm-map path.land {
+    fill: var(--vm-land);
+  }
+  #visited-map .vm-map path.visited {
+    fill: var(--vm-accent);
+  }
+  #visited-map .vm-map path.land:hover {
+    fill: var(--vm-land-h);
+  }
+  #visited-map .vm-map path.visited:hover {
+    fill: var(--vm-accent-h);
+  }
+
+  #visited-map .vm-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 340px;
+    color: var(--global-text-color-light);
+    font-family: var(--vm-sans);
+    font-size: 13px;
+  }
+
+  #visited-map .vm-tip {
+    position: absolute;
+    transform: translate(-50%, -130%);
+    background: var(--global-text-color);
+    color: var(--global-bg-color);
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-family: var(--vm-sans);
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  }
+  /* The site's base stylesheet sets `span { color: var(--global-text-color) }`,
+     which directly matches this span and overrides the white it would inherit
+     from .vm-tip — making the name invisible on the dark tooltip. Set it
+     explicitly. Scoped to the name span so the badge keeps its own #fff. */
+  #visited-map .vm-tip [data-vm-tip-name] {
+    color: var(--global-bg-color);
+  }
+  #visited-map .vm-tip::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: var(--global-text-color);
+  }
+  #visited-map .vm-badge {
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: var(--vm-accent);
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+
+  #visited-map .vm-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--global-divider-color);
+  }
+  #visited-map .vm-legend {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  #visited-map .vm-lg {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--vm-sans);
+    font-size: 13px;
+    color: var(--global-text-color-light);
+  }
+  #visited-map .vm-sw {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  #visited-map .vm-sw.v {
+    background: var(--vm-accent);
+  }
+  #visited-map .vm-sw.u {
+    background: var(--vm-land);
+  }
+  #visited-map .vm-hint {
+    font-family: var(--vm-sans);
+    font-size: 12px;
+    color: var(--global-text-color-light);
+  }
+
+  #visited-map .vm-chips {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+  #visited-map .vm-chip {
+    font-family: var(--vm-sans);
+    font-size: 12.5px;
+    color: var(--global-text-color);
+    background: var(--global-bg-color);
+    border: 1px solid var(--global-divider-color);
+    border-radius: 20px;
+    padding: 4px 11px;
+    white-space: nowrap;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #visited-map .vm-map path {
+      transition: none;
+    }
+  }
+</style>
+
+<section id="visited-map" aria-labelledby="vm-title">
+  <div class="vm-card">
+    <div class="vm-head">
+      <div>
+        <p class="vm-eyebrow">TRAVEL MAP</p>
+        <h2 class="vm-title" id="vm-title">Countries I've visited</h2>
+        <p class="vm-sub">A growing map of the places I've explored so far — hover or tap a country to see its name.</p>
+      </div>
+      <div class="vm-stats">
+        <div class="vm-stat"><div class="vm-num" data-vm-stat="countries">—</div><div class="vm-lab">countries</div></div>
+        <div class="vm-stat"><div class="vm-num" data-vm-stat="continents">—</div><div class="vm-lab">continents</div></div>
+        <div class="vm-stat"><div class="vm-num" data-vm-stat="pct">—</div><div class="vm-lab">of the world</div></div>
+      </div>
+    </div>
+
+    <div class="vm-mapwrap">
+      <div class="vm-map" data-vm-map><div class="vm-loading">Loading map…</div></div>
+      <div class="vm-tip" data-vm-tip hidden>
+        <span data-vm-tip-name></span>
+        <span class="vm-badge" data-vm-tip-badge hidden>Visited</span>
+      </div>
+    </div>
+
+    <div class="vm-foot">
+      <div class="vm-legend">
+        <div class="vm-lg"><span class="vm-sw v"></span>Visited</div>
+        <div class="vm-lg"><span class="vm-sw u"></span>Not yet</div>
+      </div>
+    </div>
+
+    <div class="vm-chips" data-vm-chips aria-label="List of visited countries"></div>
+  </div>
+</section>
+
+<script
+  src="{{ site.third_party_libraries.d3.url.js }}"
+  integrity="{{ site.third_party_libraries.d3.integrity.js }}"
+  crossorigin="anonymous"
+></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+<script defer src="{{ '/assets/js/visited-map.js' | relative_url | bust_file_cache }}"></script>
