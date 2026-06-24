@@ -23,13 +23,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/news/";
           },
-        },{id: "nav-learning-log",
-          title: "learning log",
-          description: "Things I&#39;ve been reading and watching — papers, blog posts, books, and videos that connect to my work in ML and AI Safety. A way to document the learning process over time.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/learning/";
-          },
         },{id: "nav-travel",
           title: "travel",
           description: "A collection of my travel adventures and experiences around the world.",
@@ -133,8 +126,8 @@ ninja.data = [{
           description: "Evaluating the safety robustness of an instruction-tuned language model under adversarial prompting using manual jailbreaks and automated random-search attacks",
           section: "Projects",handler: () => {
               window.location.href = "/projects/llm_jailbreak/";
-            },},{id: "travel-paris-france",
-          title: 'Paris, France',
+            },},{id: "travel-paris",
+          title: 'Paris',
           description: "Exploring the iconic landmarks, art museums, and charming streets of Paris.",
           section: "Travel",handler: () => {
               window.location.href = "/travel/paris/";
